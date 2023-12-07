@@ -1,0 +1,21 @@
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            model.screens.removeLast()
+                        }
+                    }
+                    Spacer()
+                }
+                .transition(.scale)
+            } else {
+                EmptyView()
+            }
+        }
+        .onAppear() {
+            withAnimation {
+                startAnimation = true
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .background(.red)
+    }
+}
